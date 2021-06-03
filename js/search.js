@@ -195,6 +195,108 @@ function simpTerm(term) {
             return("enExt1");
         case "english extension 2":
             return("enExt2");
+        case "maths standard":
+        case "mathematics standard":
+            return("maStand");
+        case "maths advanced":
+        case "advanced maths":
+        case "mathematics advanced":
+            return("maAdv");
+        case "mathematics extension 1":
+        case "maths extension 1":
+            return("maExt1");
+        case "mathematics extension 2":
+        case "maths extension 2":
+            return("maExt2");
+        case "drama":
+            return("dDram");
+        case "business":
+        case "business studies":
+            return("ecBus");
+        case "economics":
+            return("ecEco");
+        case "geo":
+        case "geography":
+            return("gGeo");
+        case "ancient history":
+            return("hAnc");
+        case "extension history":
+        case "history extension":
+            return("hExt")
+        case "legal":
+        case "legal studies":
+            return("hLeg");
+        case "modern history":
+            return("hMod");
+        case "external language":
+        case "external language course":
+            return("lExt");
+        case "french":
+            return("lFre");
+        case "chinese":
+            return("lChi");
+        case "latin":
+            return("lLat");
+        case "modern greek":
+        case "greek":
+            return("lGre");
+        case "music 1":
+            return("mu1");
+        case "music 2":
+            return("mu2");
+        case "extension music":
+        case "music extension":
+            return("muExt");
+        case "pdhpe":
+            return("pdhpe");
+        case "studies of religion i":
+        case "studies of religion 1":
+        case "sor 1":
+            return("pSr1");
+        case "studies of religion ii":
+        case "studies of religion 2":
+        case "sor 2": 
+            return("pSr2");
+        case "bio":
+        case "biology":
+            return("sBio");
+        case "chem":
+        case "chemistry":
+            return("sChe");
+        case "earth and enviromental":
+        case "earth and enviromental science":
+            return("sEes");
+        case "physics":
+            return("sPhy");
+        case "extension science":
+        case "science extension":
+        case "year 12 hsc science extension":
+            return("sExt");
+        case "dt":
+        case "design and technology":
+        case "design and tech":
+        case "d and t":
+        case "design technology":
+        case "design tech":
+            return("tDt");
+        case "engineering studies":
+        case "engineering":
+            return("tEs");
+        case "industrial technology":
+        case "industrial tech":
+            return("tIt");
+        case "ipt":
+        case "information processes and technlogy":
+            return("tIpt");
+        case "sdd":
+        case "software development and design":
+            return("tSdd");
+        case "art":
+        case "va":
+        case "visual arts":
+            return("va");        
+        
+
     }
 }
 
