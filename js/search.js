@@ -127,7 +127,8 @@ var subjectHeaders = ["headEn", "headMa", "headD", "headEc", "headG", "headH", "
 
 
 //Binary Search Function for the list of subjects
-function searchSub(searchTerm) {
+function searchSub() {
+    var searchTerm = document.getElementById("searchBar").value
     var tempTerm = ""
     var searchResult = ""
     //Sorts subjects alphabetically prior to binary search
@@ -137,26 +138,31 @@ function searchSub(searchTerm) {
     tempTerm = simpTerm(searchTerm)
 
     //Executes binary Search Function
-    searchResult = binarySearch(subjects, tempTerm)
+    searchResult = binarySearch(tempTerm)
 
-    hideDivs()
+    if(searchResult == "null"){
+        alert("No Results")
+    }else{
+        hideDivs()
 
-    document.getElementById(subjects.name[searchResult]).style.display = "Block"
+        document.getElementById(searchResult).style.display = "Block"
+    }
+    
 
 }
 
 //Binary Search Function
-function binarySearch(items, value) {
+function binarySearch(value) {
     var startIndex = 0
-    var endIndex = items.length - 1
+    var endIndex = subjects.length - 1
     var middle = Math.floor((endIndex + startIndex) / 2)
 
-    while (items.name[middle] != value && startIndex < endIndex) {
+    while(subjects[middle].name != value && startIndex < endIndex){
 
         //Changes search location
-        if (value < items.name[middle]) {
+        if (value < subjects[middle].name) {
             endIndex = middle - 1;
-        } else if (value > items.name[middle]) {
+        } else if (value > subjects[middle].name) {
             endIndex = middle + 1;
         }
 
@@ -164,21 +170,19 @@ function binarySearch(items, value) {
         middle = Math.floor((endIndex + startIndex) / 2);
     }
 
-    //Assures value is correct and returns it
-    return (items.name[middle] != value) ? -1 : middle;
-}
-
-//Selects user's desired subject and adds to the selected list
-function subjectPick(inputSub) {
-
-
-
-
+    //Assures value is correct and returns it or null value
+    if(subjects[middle].name != value){
+        return("null")
+    }else{
+        return(subjects[middle].name)
+    }
+    
+    
 }
 
 //Simplifies the search term to its relative code
 function simpTerm(term) {
-    term = term.toLowerCase
+    term = term.toLowerCase();
     switch (term) {
         case "english studies":
             return ("enStud");
