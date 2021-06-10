@@ -192,9 +192,11 @@ function simpTerm(term) {
         case "english eald":
             return ("enEald");
         case "english standard":
+        case "standard english":
         case "english (standard)":
             return ("enStand");
         case "english advanced":
+        case "advanced english":
         case "english (advanced)":
             return ("enAdv");
         case "english extension 1":
@@ -203,6 +205,7 @@ function simpTerm(term) {
             return ("enExt2");
         case "maths standard":
         case "mathematics standard":
+        case "mathematics (standard)":    
             return ("maStand");
         case "maths advanced":
         case "advanced maths":
