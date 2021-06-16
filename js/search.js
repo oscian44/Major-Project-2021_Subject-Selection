@@ -1,5 +1,5 @@
 var subjects = [{
-        name: "enStud",
+        name: "enStud"
     },
     {
         name: "enEald"
