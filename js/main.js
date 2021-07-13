@@ -2,7 +2,7 @@
 var subCount = localStorage.getItem("subCount")
 
 if(subCount == null){
-  subCount = 1
+  subCount = 1;
 }
 
 var subjects = [{
@@ -304,7 +304,7 @@ function selectSubject() {
       subjects[num].sel = 1
 
       var subName6 = (subjects[num].name)
-      var subUnits6 = (subjects[num].units) + " Units"
+      var subUnits6 = (subjects[num].units) + " Units";
 
       localStorage.setItem("subName6", subName6)
       localStorage.setItem("subUnits6", subUnits6)
