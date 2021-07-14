@@ -27,20 +27,21 @@
         </div>
     </div>
 
-    <div class="searchBox">
-        <input class="searchInput" type="text" name="" placeholder="Search Subject Category" id="searchBar">
-        <button class="searchButton" onclick="searchSub()">
-            <i class="material-icons">
-                search
-            </i>
-        </button>
-    </div>
+    
 
 
     <div class="wrapper">
-        
+
         <div class="subjectHeader" id="utilButtons">
-            <button class="button" onclick="subClear()">Clear Selection</button>
+            <button class="button" onclick="subClear()">Clear Subject Selection</button>
+
+            <button class="button" onclick="showDivs()">Reset Search</button>
+            
+        </div>
+
+        <div class="subjectHeader" id="headSearch">
+            <input  type="text" name="" placeholder="Search Subject Category" id="searchBar">
+            <button onclick="searchSub()">🔍</button>
         </div>
 
         <div class="subjectHeader groupEnglish" id="headEn">

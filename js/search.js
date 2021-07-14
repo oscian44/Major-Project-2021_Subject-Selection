@@ -1,4 +1,4 @@
-var subjects = [{
+var subjectsCode = [{
         name: "enStud"
     },
     {
@@ -133,7 +133,7 @@ function searchSub() {
     var searchResult = ""
 
     //Sorts subjects alphabetically prior to binary search
-    subjects = sortsubjects()
+    subjectsCode = sortsubjects()
 
     //Convert search term to its relative subject code for use in binary search
     tempTerm = simpTerm(searchTerm)
@@ -143,7 +143,7 @@ function searchSub() {
         searchResult = "null";
     } else {
         //Executes binary Search Function
-        searchResult = binarySearch(subjects, tempTerm)
+        searchResult = binarySearch(subjectsCode, tempTerm)
     }
 
     //Displays search results
@@ -153,7 +153,7 @@ function searchSub() {
     } else {
         hideDivs()
 
-        document.getElementById(subjects[searchResult].name).style.display = "Block"
+        document.getElementById(subjectsCode[searchResult].name).style.display = "Block"
     }
 
 
@@ -326,7 +326,7 @@ function sortsubjects() {
         }
         return comparison;
     }
-    return subjects.sort(compare);
+    return subjectsCode.sort(compare);
 
 }
 
@@ -335,17 +335,19 @@ function hideDivs() {
     for (i = 0; i < subjectHeaders.length; i++) {
         document.getElementById(subjectHeaders[i]).style.display = "none";
     }
-    for (i = 0; i < subjects.length; i++) {
-        document.getElementById(subjects[i].name).style.display = "none";
+    for (i = 0; i < subjectsCode.length; i++) {
+        document.getElementById(subjectsCode[i].name).style.display = "none";
     }
 }
 
 //Reveals all subject divs
 function showDivs() {
     for (i = 0; i < subjectHeaders.length; i++) {
+        console.log(subjectHeaders[i])
         document.getElementById(subjectHeaders[i]).style.display = "Block";
     }
-    for (i = 0; i < subjects.length; i++) {
-        document.getElementById(subjects[i].name).style.display = "Block";
+    for (i = 0; i < subjectsCode.length; i++) {
+        console.log(subjectsCode[i].name)
+        document.getElementById(subjectsCode[i].name).style.display = "Block";
     }
 }
