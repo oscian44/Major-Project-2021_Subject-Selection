@@ -1,217 +1,222 @@
-
 var subCount = localStorage.getItem("subCount")
 
-if(subCount == null){
+if (subCount == null) {
   subCount = 1;
 }
 
-var subjects = [{
-    name: "English Studies",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "English EAL/D",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "English Standard",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "English Advanced",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "English Extension 1",
-    units: "1",
-    sel: 0
-  },
-  {
-    name: "English Extension 2",
-    units: "1",
-    sel: 0
-  },
-  {
-    name: "Math Standard",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Math Advanced",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Math Extension 1",
-    units: "1",
-    sel: 0
-  },
-  {
-    name: "Math Extension 2",
-    units: "1",
-    sel: 0
-  },
-  {
-    name: "Drama",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Business Studies",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Economics",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Geography",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Ancient History",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "History Extension",
-    units: "1",
-    sel: 0
-  },
-  {
-    name: "Legal Studies",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Modern History",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "External Lanuage Course",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "French",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Chinese",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Latin",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Modern Greek",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Music 1",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Music 2",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Music Extension",
-    units: "1",
-    sel: 0
-  },
-  {
-    name: "PDHPE",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Studies of Religion 1",
-    units: "1",
-    sel: 0
-  },
-  {
-    name: "Studies of Religion 2",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Biology",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Chemistry",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Earth and Environmental Science",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Physics",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Science Extension",
-    units: "1",
-    sel: 0
-  },
-  {
-    name: "Design and Technology",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Engineering Studies",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Industrial Technology",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "IPT",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Software Design and Development",
-    units: "2",
-    sel: 0
-  },
-  {
-    name: "Visual Arts",
-    units: "2",
-    sel: 0
-  }
-];
+var subjects = JSON.parse(localStorage.getItem("subjects"))
+
+if (subjects == null || subjects[1].name == null) {
+  subjects = [{
+      name: "English Studies",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "English EAL/D",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "English Standard",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "English Advanced",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "English Extension 1",
+      units: "1",
+      sel: 0
+    },
+    {
+      name: "English Extension 2",
+      units: "1",
+      sel: 0
+    },
+    {
+      name: "Math Standard",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Math Advanced",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Math Extension 1",
+      units: "1",
+      sel: 0
+    },
+    {
+      name: "Math Extension 2",
+      units: "1",
+      sel: 0
+    },
+    {
+      name: "Drama",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Business Studies",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Economics",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Geography",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Ancient History",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "History Extension",
+      units: "1",
+      sel: 0
+    },
+    {
+      name: "Legal Studies",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Modern History",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "External Lanuage Course",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "French",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Chinese",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Latin",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Modern Greek",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Music 1",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Music 2",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Music Extension",
+      units: "1",
+      sel: 0
+    },
+    {
+      name: "PDHPE",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Studies of Religion 1",
+      units: "1",
+      sel: 0
+    },
+    {
+      name: "Studies of Religion 2",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Biology",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Chemistry",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Earth and Environmental Science",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Physics",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Science Extension",
+      units: "1",
+      sel: 0
+    },
+    {
+      name: "Design and Technology",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Engineering Studies",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Industrial Technology",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "IPT",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Software Design and Development",
+      units: "2",
+      sel: 0
+    },
+    {
+      name: "Visual Arts",
+      units: "2",
+      sel: 0
+    }
+  ];
+}
+
 
 function selectSubject() {
   if (subCount == 1) {
     console.log(subjects[num].name + " " + subjects[num].units + " - Selected as sub1")
 
     subjects[num].sel = 1
+    localStorage.setItem("subjects", JSON.stringify(subjects));
 
     var subName1 = (subjects[num].name)
     var subUnits1 = (subjects[num].units) + " Units"
@@ -229,6 +234,7 @@ function selectSubject() {
       console.log(subjects[num].name + " " + subjects[num].units + " - Selected as sub2")
 
       subjects[num].sel = 1
+      localStorage.setItem("subjects", JSON.stringify(subjects));
 
       var subName2 = (subjects[num].name)
       var subUnits2 = (subjects[num].units) + " Units"
@@ -248,6 +254,7 @@ function selectSubject() {
       console.log(subjects[num].name + " " + subjects[num].units + " - Selected as sub3")
 
       subjects[num].sel = 1
+      localStorage.setItem("subjects", JSON.stringify(subjects));
 
       var subName3 = (subjects[num].name)
       var subUnits3 = (subjects[num].units) + " Units"
@@ -266,6 +273,7 @@ function selectSubject() {
       console.log(subjects[num].name + " " + subjects[num].units + " - Selected as sub4")
 
       subjects[num].sel = 1
+      localStorage.setItem("subjects", JSON.stringify(subjects));
 
       var subName4 = (subjects[num].name)
       var subUnits4 = (subjects[num].units) + " Units"
@@ -284,6 +292,7 @@ function selectSubject() {
       console.log(subjects[num].name + " " + subjects[num].units + " - Selected as sub5")
 
       subjects[num].sel = 1
+      localStorage.setItem("subjects", JSON.stringify(subjects));
 
       var subName5 = (subjects[num].name)
       var subUnits5 = (subjects[num].units) + " Units"
@@ -302,6 +311,7 @@ function selectSubject() {
       console.log(subjects[num].name + " " + subjects[num].units + " - Selected as sub6")
 
       subjects[num].sel = 1
+      localStorage.setItem("subjects", JSON.stringify(subjects));
 
       var subName6 = (subjects[num].name)
       var subUnits6 = (subjects[num].units) + " Units";
@@ -320,6 +330,7 @@ function selectSubject() {
       console.log(subjects[num].name + " " + subjects[num].units + " - Selected as sub7")
 
       subjects[num].sel = 1
+      localStorage.setItem("subjects", JSON.stringify(subjects));
 
       var subName7 = (subjects[num].name)
       var subUnits7 = (subjects[num].units) + " Units"
@@ -338,6 +349,7 @@ function selectSubject() {
       console.log(subjects[num].name + " " + subjects[num].units + " - Selected as sub8")
 
       subjects[num].sel = 1
+      localStorage.setItem("subjects", JSON.stringify(subjects));
 
       var subName8 = (subjects[num].name)
       var subUnits8 = (subjects[num].units) + " Units"
@@ -412,5 +424,6 @@ function subClear() {
 
   for (i = 0; i < subjects.length; i++) {
     subjects[i].sel = 0
+    localStorage.setItem("subjects", JSON.stringify(subjects));
   }
 }
