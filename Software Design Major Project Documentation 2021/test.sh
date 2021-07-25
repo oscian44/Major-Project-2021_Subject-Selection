@@ -1,0 +1,1 @@
+git -C "C:\Users\oscia\OneDrive\School\Software Design\Git Repos\Major-Project-2021_Subject-Selection" log --branches --tags --remotes --full-history --date-order --format="%as %an %s %N" > log.csv
