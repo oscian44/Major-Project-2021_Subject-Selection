@@ -18,7 +18,7 @@
     - Links to other pages via buttons
 - Search page – Screen 2
     - Allows searching of HSC subject by name and sorting by unit value
-    - Allows the adding of units to selection
+    - Allows the adding of subjects to selection
     - Links to other pages via buttons
 - Submit page – Screen 3
     - Validates selected units and returns if the selection is within the allowed unit value
