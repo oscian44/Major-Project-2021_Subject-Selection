@@ -450,6 +450,8 @@ function subClear() {
 }
 
 function subSubmit() {
+  
+
   var sub1 = Number(localStorage.getItem("subUnits1"))
   var sub2 = Number(localStorage.getItem("subUnits2"))
   var sub3 = Number(localStorage.getItem("subUnits3"))
@@ -462,41 +464,6 @@ function subSubmit() {
   var subs = sub1 + sub2 + sub3 + sub4 + sub5 + sub6 + sub7 + sub8
 
   var sublist = [localStorage.getItem("subName1"), localStorage.getItem("subName2"), localStorage.getItem("subName3"), localStorage.getItem("subName4"), localStorage.getItem("subName5"), localStorage.getItem("subName6"), localStorage.getItem("subName7"), localStorage.getItem("subName8"), ]
-
-  var subN1 = localStorage.getItem("subName1")
-  var subN2 = localStorage.getItem("subName2")
-  var subN3 = localStorage.getItem("subName3")
-  var subN4 = localStorage.getItem("subName4")
-  var subN5 = localStorage.getItem("subName5")
-  var subN6 = localStorage.getItem("subName6")
-  var subN7 = localStorage.getItem("subName7")
-  var subN8 = localStorage.getItem("subName8")
-
-  var subNs1 = subN1.split(" ").shift()
-  var subNs2 = subN2.split(" ").shift()
-  var subNs3 = subN3.split(" ").shift()
-  var subNs4 = subN4.split(" ").shift()
-  var subNs5 = subN5.split(" ").shift()
-  var subNs6 = subN6.split(" ").shift()
-  var subNs7 = subN7.split(" ").shift()
-  var subNs8 = subN8.split(" ").shift()
-
-  var subNp1 = subN1.split(" ")
-  var subNp2 = subN2.split(" ")
-  var subNp3 = subN3.split(" ")
-  var subNp4 = subN4.split(" ")
-  var subNp5 = subN5.split(" ")
-  var subNp6 = subN6.split(" ")
-  var subNp7 = subN7.split(" ")
-  var subNp8 = subN8.split(" ")
-
-  var subNP = []
-
-  subNP = subNp1.concat(subNp2, subNp3, subNp4, subNp5, subNp6, subNp7, subNp8);
-
-  var subNS = [subNs1, subNs2, subNs3, subNs4, subNs5, subNs6, subNs7, subNs8]
-
-
 
   switch (subs) {
     case 0:
@@ -521,14 +488,82 @@ function subSubmit() {
     case 14:
     case 15:
     case 16:
-      checkEnglish(subNS, subNP, sublist);
-
-
+      checkEnglish(sublist);
 
   }
 }
 
-function checkEnglish(subNS, subNP, sublist) {
+function checkEnglish(sublist) {
+
+  var subN1 = localStorage.getItem("subName1")
+  var subN2 = localStorage.getItem("subName2")
+  var subN3 = localStorage.getItem("subName3")
+  var subN4 = localStorage.getItem("subName4")
+  var subN5 = localStorage.getItem("subName5")
+  var subN6 = localStorage.getItem("subName6")
+  var subN7 = localStorage.getItem("subName7")
+  var subN8 = localStorage.getItem("subName8")
+
+  var subNs1 = ""
+  var subNs2 = ""
+  var subNs3 = ""
+  var subNs4 = ""
+  var subNs5 = ""
+  var subNs6 = ""
+  var subNs7 = ""
+  var subNs8 = ""
+
+  var subNp1 = ""
+  var subNp2 = ""
+  var subNp3 = ""
+  var subNp4 = ""
+  var subNp5 = ""
+  var subNp6 = ""
+  var subNp7 = ""
+  var subNp8 = ""
+
+  if(subN1 != null){
+    subNs1 = subN1.split(" ").shift()
+    subNp1 = subN1.split(" ")
+  }
+
+  if(subN2 != null){
+    subNs2 = subN2.split(" ").shift()
+    subNp2 = subN2.split(" ")
+  }
+  if(subN3 != null){
+    subNs3 = subN3.split(" ").shift()
+    subNp3 = subN3.split(" ")
+  }
+  if(subN4 != null){
+    subNs4 = subN4.split(" ").shift()
+    subNp4 = subN4.split(" ")
+  }
+  if(subN5 != null){
+    subNs5 = subN5.split(" ").shift()
+    subNp5 = subN5.split(" ")
+  }
+  if(subN6 != null){
+    subNs6 = subN6.split(" ").shift()
+    subNp6 = subN6.split(" ")
+  }
+  if(subN7 != null){
+    subNs7 = subN7.split(" ").shift()
+    subNp7 = subN7.split(" ")
+  }
+  if(subN8 != null){
+    subNs8 = subN8.split(" ").shift()
+    subNp8 = subN8.split(" ")
+  }
+
+  var subNP = []
+
+  subNP = subNp1.concat(subNp2, subNp3, subNp4, subNp5, subNp6, subNp7, subNp8);
+
+  var subNS = [subNs1, subNs2, subNs3, subNs4, subNs5, subNs6, subNs7, subNs8]
+
+
+
   switch (countInArray(subNS, "English")) {
     case 1:
       if (countInArray(sublist, "English Extension 1") == 0 || countInArray(sublist, "English Extension 2") == 0) {
