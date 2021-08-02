@@ -1,11 +1,14 @@
+//Pulls value indicating how many subjects are selected from localstorage
 var subCount = localStorage.getItem("subCount")
 
 if (subCount == null) {
   subCount = 1;
 }
 
+//Pulls subject array from localstorage
 var subjects = JSON.parse(localStorage.getItem("subjects"))
 
+//Sets subject array if the localstorage is empty
 if (subjects == null || subjects[1].name == null) {
   subjects = [{
       name: "English Studies",
@@ -210,7 +213,7 @@ if (subjects == null || subjects[1].name == null) {
   ];
 }
 
-
+//Recives details of subject from HTML button and adds to localstorage, has validation to protect against duplicate subjects
 function selectSubject() {
   if (subCount == 1) {
     console.log(subjects[num].name + " " + subjects[num].units + " - Selected as sub1")
@@ -364,6 +367,7 @@ function selectSubject() {
   }
 }
 
+//Refreshes the saved list of subjects on the webpage from localstorage
 function subChange() {
 
   if (localStorage.getItem("subUnits1") == null) {} else {
@@ -435,6 +439,7 @@ function subChange() {
 
 }
 
+//Clears localstorage values
 function subClear() {
   localStorage.clear();
   subChange()
@@ -449,6 +454,7 @@ function subClear() {
   location.reload()
 }
 
+//Totals unit value of selection and begins subject validation
 function subSubmit() {
   
 
@@ -493,6 +499,7 @@ function subSubmit() {
   }
 }
 
+//Function to check for overlaps between english standard and advanced
 function checkEnglish(sublist) {
 
   var subN1 = localStorage.getItem("subName1")
@@ -563,7 +570,6 @@ function checkEnglish(sublist) {
   var subNS = [subNs1, subNs2, subNs3, subNs4, subNs5, subNs6, subNs7, subNs8]
 
 
-
   switch (countInArray(subNS, "English")) {
     case 1:
       if (countInArray(sublist, "English Extension 1") == 0 || countInArray(sublist, "English Extension 2") == 0) {
@@ -592,6 +598,7 @@ function checkEnglish(sublist) {
   }
 }
 
+//Function to check for overlaps between standard and advanced mathematics
 function checkMaths(subNS, subNP, sublist) {
   switch (countInArray(subNS, "Math")) {
     case 0:
@@ -618,11 +625,13 @@ function checkMaths(subNS, subNP, sublist) {
   }
 }
 
+//Function that indicates the subjects were valid on the webpage
 function subDiv() {
   document.getElementById("resultRes1").innerHTML = "Subjects Selection Valid"
   document.getElementById("resultRes2").innerHTML = "Results Have Been Submitted For Review"
 }
 
+//Function that counts how many times a certain string appears in an array
 function countInArray(array, what) {
   return array.filter(item => item == what).length;
 }
